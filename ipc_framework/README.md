@@ -1,4 +1,4 @@
-# Comprehensive Inter-Process Communication (IPC) Framework
+# IPCXplorer-Inter-Process-Communication-Mechanisms
 
 This is a complete, presentation-ready project demonstrating 4 major IPC mechanisms, process lifecycle management, synchronization, and real-time visualization.
 
