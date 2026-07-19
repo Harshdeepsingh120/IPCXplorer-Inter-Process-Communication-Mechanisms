@@ -1,2 +1,35 @@
-IPCXplorer-Inter-Process-Communication-Mechanisms
-C/Linux implementation of core IPC mechanisms — Shared Memory, Message Queues, Pipes, FIFOs, Semaphores, Signals — with Producer-Consumer and Reader-Writer demos. IPCXplorer is a C-based project on Linux demonstrating the core Inter-Process Communication (IPC) mechanisms provided by POSIX and System V APIs — Shared Memory, Message Queues, Pipes, FIFOs, Semaphores, and Signals. Each mechanism is implemented as an independent module and used to solve classic synchronization problems, including Producer-Consumer (via shared memory and semaphores) and Reader-Writer (via message queues). The project also includes a benchmarking module to compare throughput and latency across the different IPC techniques under varying load. Built to understand the practical trade-offs between IPC mechanisms in terms of speed, persistence, and synchronization complexity — useful as a reference for systems programming and concurrent application design."
+# IPCXplorer-Inter-Process-Communication-Mechanisms
+
+This is a complete, presentation-ready project demonstrating 4 major IPC mechanisms, process lifecycle management, synchronization, and real-time visualization.
+
+## Prerequisites
+- Python 3.8+
+- `pip install flask chart.js` (Chart.js is pulled via CDN, so just Flask is needed locally).
+
+## Installation
+1. Open a terminal in this directory.
+2. Install dependencies:
+   ```bash
+   pip install flask
+   ```
+
+## Execution Guide
+
+1. Run the main entry point:
+   ```bash
+   python main.py
+   ```
+2. Open your web browser and navigate to:
+   `http://localhost:5000`
+
+3. **Using the Dashboard:**
+   - Observe the live latency chart and real-time logs.
+   - Click the **Control Panel** buttons to dynamically switch the active IPC mechanism.
+   - Watch the logs for "High Priority" encrypted messages and simulated Sender crashes.
+
+## Directory Structure
+- `ipc_core/`: The core abstraction and implementation of Pipes, Queues, Shared Memory, and Sockets.
+- `processes/`: The process definitions (Controller, Sender, Receiver, Monitor).
+- `frontend/`: The HTML/CSS/JS dashboard.
+- `docs/`: Presentation guides and explanations.
+- `logs/`: Runtime system logs (`system.log`).
