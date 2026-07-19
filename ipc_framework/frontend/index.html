@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPC Framework Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>IPC Framework Dashboard</h1>
+            <div class="status-indicator">
+                <span class="dot pulse"></span> System Active
+            </div>
+        </header>
+        
+        <main>
+            <section class="controls panel glass">
+                <h2>Control Panel</h2>
+                <div class="control-group">
+                    <label>Active IPC Mechanism:</label>
+                    <div class="button-group">
+                        <button onclick="switchIPC('PIPE')" id="btn-PIPE" class="active">PIPE</button>
+                        <button onclick="switchIPC('MESSAGE_QUEUE')" id="btn-MESSAGE_QUEUE">MESSAGE QUEUE</button>
+                        <button onclick="switchIPC('SHARED_MEMORY')" id="btn-SHARED_MEMORY">SHARED MEMORY</button>
+                        <button onclick="switchIPC('SOCKET')" id="btn-SOCKET">SOCKET</button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="grid-2">
+                <section class="metrics panel glass">
+                    <h2>Latency Monitor (ms)</h2>
+                    <div style="height: 300px;">
+                        <canvas id="latencyChart"></canvas>
+                    </div>
+                </section>
+                
+                <section class="logs panel glass">
+                    <h2>Real-time Traffic Log</h2>
+                    <div class="log-container" id="logContainer">
+                        <!-- Logs injected via JS -->
+                    </div>
+                </section>
+            </div>
+            
+            <section class="architecture panel glass">
+                <h2>System Status</h2>
+                <div class="process-flow">
+                    <div class="process-node sender pulse-border">
+                        <h3>SENDER</h3>
+                        <p>Simulating Sensor Data</p>
+                    </div>
+                    <div class="flow-arrow">
+                        <span id="active-ipc-label">PIPE</span>
+                        <div class="arrow-line">➔</div>
+                    </div>
+                    <div class="process-node receiver pulse-border">
+                        <h3>RECEIVER</h3>
+                        <p>Consuming & Decrypting</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
